@@ -15,6 +15,9 @@ class Streets(models.Model):
     def __str__(self):
         return f'Город: {self.city.name}, Улица: {self.name}'
 
+    class Meta:
+        unique_together = ('name', 'city')
+
 
 class Address(models.Model):
     street = models.ForeignKey(Streets, on_delete=models.CASCADE)
@@ -22,3 +25,6 @@ class Address(models.Model):
 
     def __str__(self):
         return f'{self.street}, Дом: {self.house}'
+
+    class Meta:
+        unique_together = ('street', 'house')
