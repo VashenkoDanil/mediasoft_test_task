@@ -9,8 +9,8 @@ from shops.models import Shops
 
 class ShopsFilter(FilterSet):
     open = NumberFilter(method='filter_open_or_close_shops', label='open')
-    street = CharFilter(field_name='address__street__name', distinct=False, lookup_expr='icontains')
-    city = CharFilter(field_name='address__street__city__name', distinct=False, lookup_expr='icontains')
+    street = CharFilter(field_name='address__street__name', distinct=False, lookup_expr='icontains', label='street')
+    city = CharFilter(field_name='address__street__city__name', distinct=False, lookup_expr='icontains', label='city')
 
     class Meta:
         model = Shops
