@@ -1,7 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.mixins import ListModelMixin
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
@@ -14,7 +13,6 @@ from .serializers import ShopSerializer
 class ShopsViewSet(ListModelMixin, GenericViewSet):
     queryset = Shops.objects.all()
     serializer_class = ShopSerializer
-    permission_classes = [IsAuthenticated]
 
     filter_backends = [DjangoFilterBackend]
     filter_class = ShopsFilter

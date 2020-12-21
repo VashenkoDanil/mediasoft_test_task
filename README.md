@@ -79,6 +79,12 @@
    
     `python manage.py migrate`
 
+6) Загрузим несколько городов и магазинов:
+   
+   `python manage.py loaddata address/fixtures/initial_data.json`
+   
+   `python manage.py loaddata shops/fixtures/initial_data.json`
+
 ***
 ### **Описание, как запустить проект:**
 `python manage.py runserver`
