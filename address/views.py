@@ -18,10 +18,8 @@ class CitiesViewSet(mixins.ListModelMixin,
         return super(CitiesViewSet, self).list(request, *args, **kwargs)
 
     @action(methods=['get'], detail=True, url_path='street', url_name='list_streets')
+    @check_error_and_return_bad_request
     def list_streets(self, request, pk=None):
-        try:
-            streets = self.get_object().streets_set.all()
-            serializer = StreetSerializer(streets, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except Exception:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+        streets = self.get_object().streets_set.all()
+        serializer = StreetSerializer(streets, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

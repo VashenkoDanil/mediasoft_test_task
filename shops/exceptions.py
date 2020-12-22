@@ -1,5 +1,6 @@
 from rest_framework import status
 from rest_framework.response import Response
+from functools import wraps
 
 
 class ShopWithThisNameAndAddressAlreadyExistsError(Exception):
@@ -12,9 +13,10 @@ class ShopWithThisNameAndAddressAlreadyExistsError(Exception):
 
 def check_error_and_return_bad_request(func):
     """Декоратор для обработки ошибок, методы должны возвращать либо ответ 200 либо 400"""
-    def wrapper(*args, **kwargs):
+    @wraps(func)
+    def func_wrapper(*args, **kwargs):
         try:
             return func(*args, **kwargs)
         except Exception:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-    return wrapper
+    return func_wrapper
