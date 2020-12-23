@@ -1,1 +1,67 @@
-[{"model": "address.cities", "pk": 1, "fields": {"name": "Москва"}}, {"model": "address.cities", "pk": 2, "fields": {"name": "Ульяновск"}}, {"model": "address.cities", "pk": 3, "fields": {"name": "Самара"}}, {"model": "address.cities", "pk": 4, "fields": {"name": "Казань"}}, {"model": "address.streets", "pk": 1, "fields": {"name": "Ленина", "city": 1}}, {"model": "address.streets", "pk": 2, "fields": {"name": "Ленина", "city": 2}}, {"model": "address.streets", "pk": 3, "fields": {"name": "Гончарова", "city": 2}}, {"model": "address.streets", "pk": 4, "fields": {"name": "Минаева", "city": 2}}, {"model": "address.streets", "pk": 5, "fields": {"name": "Станиславского", "city": 1}}, {"model": "address.streets", "pk": 6, "fields": {"name": "Трофимова", "city": 1}}, {"model": "address.address", "pk": 1, "fields": {"street": 1, "house": "1"}}, {"model": "address.address", "pk": 2, "fields": {"street": 2, "house": "1"}}, {"model": "address.address", "pk": 3, "fields": {"street": 5, "house": "1"}}]
+[
+  {
+    "model": "address.cities",
+    "pk": 1,
+    "fields": {"name": "Москва"}
+  },
+  {
+    "model": "address.cities",
+    "pk": 2,
+    "fields": {"name": "Ульяновск"}
+  },
+  {
+    "model": "address.cities",
+    "pk": 3,
+    "fields": {"name": "Самара"}
+  },
+  {
+    "model": "address.cities",
+    "pk": 4,
+    "fields": {"name": "Казань"}
+  },
+  {
+    "model": "address.streets",
+    "pk": 1,
+    "fields": {"name": "Ленина", "city": 1}
+  },
+  {
+    "model": "address.streets",
+    "pk": 2,
+    "fields": {"name": "Ленина", "city": 2}
+  },
+  {
+    "model": "address.streets",
+    "pk": 3,
+    "fields": {"name": "Гончарова", "city": 2}
+  },
+  {
+    "model": "address.streets",
+    "pk": 4,
+    "fields": {"name": "Минаева", "city": 2}
+  },
+  {
+    "model": "address.streets",
+    "pk": 5,
+    "fields": {"name": "Станиславского", "city": 1}
+  },
+  {
+    "model": "address.streets",
+    "pk": 6,
+    "fields": {"name": "Трофимова", "city": 1}
+  },
+  {
+    "model": "address.address",
+    "pk": 1,
+    "fields": {"street": 1, "house": "1"}
+  },
+  {
+    "model": "address.address",
+    "pk": 2,
+    "fields": {"street": 2, "house": "1"}
+  },
+  {
+    "model": "address.address",
+    "pk": 3,
+    "fields": {"street": 5, "house": "1"}
+  }
+]

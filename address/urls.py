@@ -3,6 +3,6 @@ from .views import CitiesViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'', CitiesViewSet)
+router.register(r'', CitiesViewSet, basename='city')
 
 urlpatterns = router.urls

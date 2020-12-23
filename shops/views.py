@@ -19,7 +19,7 @@ class ShopsViewSet(ListModelMixin, GenericViewSet):
 
     @check_error_and_return_bad_request
     def list(self, request, *args, **kwargs):
-        return super(ShopsViewSet, self).list(request, *args, **kwargs)
+        return super().list(request, *args, **kwargs)
 
     @check_error_and_return_bad_request
     def create(self, request, *args, **kwargs):

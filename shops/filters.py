@@ -2,7 +2,7 @@ import datetime
 
 from django.db.models import F, Q, Case, When
 from django.db.models import Value, TimeField
-from django_filters import FilterSet, NumberFilter, CharFilter
+from django_filters import FilterSet, NumberFilter, CharFilter, OrderingFilter
 
 from shops.models import Shops
 
@@ -11,6 +11,18 @@ class ShopsFilter(FilterSet):
     open = NumberFilter(method='filter_open_or_close_shops', label='open')
     street = CharFilter(field_name='address__street__name', distinct=False, lookup_expr='icontains', label='street')
     city = CharFilter(field_name='address__street__city__name', distinct=False, lookup_expr='icontains', label='city')
+
+    order_by_field = 'ordering'
+    ordering = OrderingFilter(
+        fields=(
+            ('name', 'name'),
+            ('address__street__city__name', 'city'),
+            ('address__street__name', 'street'),
+            ('address__house', 'house'),
+            ('time_open', 'time_open'),
+            ('time_close', 'time_close'),
+        ),
+    )
 
     class Meta:
         model = Shops
